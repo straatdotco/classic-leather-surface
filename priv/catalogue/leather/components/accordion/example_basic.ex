@@ -1,4 +1,4 @@
-defmodule Leather.Components.Accordion.ExampleBasic do
+defmodule Leather.Components.Catalogue.Accordion.ExampleBasic do
   use Surface.Catalogue.Example,
     catalogue: Leather.Components.Catalogue,
     subject: Leather.Components.Accordion,

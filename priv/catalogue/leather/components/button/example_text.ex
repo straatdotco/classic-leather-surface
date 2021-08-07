@@ -1,4 +1,4 @@
-defmodule Leather.Components.Button.ExampleText do
+defmodule Leather.Components.Catalogue.Button.ExampleText do
   use Surface.Catalogue.Example,
     catalogue: Leather.Components.Catalogue,
     subject: Leather.Components.Button,
