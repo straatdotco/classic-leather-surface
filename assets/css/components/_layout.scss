@@ -1,0 +1,8 @@
+.main-header-logo {
+  width: 150px;
+  vertical-align: sub;
+
+  @media (min-width: $medium-screen) {
+    width: 200px;
+  }
+}

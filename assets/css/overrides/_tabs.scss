@@ -1,0 +1,14 @@
+.tabs {
+  .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.selected {
+  box-shadow: 0px -2px 0px 0px $secondary-color inset;
+  -webkit-box-shadow: 0px -2px 0px 0px $secondary-color inset;
+  -moz-box-shadow: 0px -2px 0px 0px $secondary-color inset;
+}

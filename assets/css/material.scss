@@ -1,0 +1,28 @@
+/* This file is for your main application css. */
+// @import "../node_modules/materialize-css/sass/components/color-variables";
+@import './variables';
+
+@import '../node_modules/materialize-css/sass/materialize.scss';
+// @import "../node_modules/material-design-lite/src/material-design-lite.scss";
+
+@import './overrides/global';
+@import './overrides/button';
+@import './overrides/preloader';
+@import './overrides/grid';
+@import './overrides/navbar';
+@import './overrides/input_fields';
+@import './overrides/typography';
+@import './overrides/card';
+@import './overrides/collection';
+@import './overrides/collapsible';
+@import './overrides/modal';
+@import './overrides/icons';
+@import './overrides/tabs';
+@import './overrides/table';
+@import './overrides/select';
+@import './overrides/carousel';
+@import './overrides/toast';
+
+@import './components/utils';
+@import './components/layout';
+@import './components/popover';

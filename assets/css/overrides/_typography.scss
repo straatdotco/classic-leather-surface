@@ -1,0 +1,65 @@
+// Typography line: class, font-size, font-weight, line-height, letter-spacing
+$typographies: 'h1' 6rem 300 1.167 -0.01562em, 'h2' 3.75rem 300 1.2 -0.00833em,
+  'h3' 3rem 400 1.167 0em, 'h4' 2.125rem 400 1.235 0.00735em,
+  'h5' 1.5rem 400 1.334 0em, 'h6' 1.25rem 500 1.6 0.0075em,
+  'h6' 1.25rem 500 1.6 0.0075em, 'subtitle1' 1rem 400 1.75 0.00983em,
+  'subtitle2' 0.875rem 500 1.57 0.00714em, 'body1' 1rem 400 1.5 0.00983em,
+  'body2' 0.875rem 400 1.43 0.01071em, 'caption' 0.75rem 400 1.66 0em;
+
+$text-colors: (
+  'primary': $text-primary-color,
+  'secondary': $text-secondary-color,
+  'hint': $text-hint-color,
+  'success': $success-color,
+  'error': $error-color,
+  'inherit': 'inherit',
+);
+
+$sizes: 'sm' $small-screen, 'md' $medium-screen, 'lg' $large-screen;
+
+@mixin build-typography($size, $weight, $height, $spacing) {
+  display: inline-block;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  letter-spacing: $spacing;
+}
+
+@each $class, $size, $weight, $height, $spacing in $typographies {
+  .typography-#{$class} {
+    @include build-typography($size, $weight, $height, $spacing);
+
+    &.gutter-bottom {
+      margin-bottom: 0.35em;
+    }
+  }
+}
+
+@each $class, $size, $weight, $height, $spacing in $typographies {
+  @each $label, $screen-size in $sizes {
+    .typography-#{$label}-#{$class} {
+      @media (min-width: $screen-size) {
+        @include build-typography($size, $weight, $height, $spacing);
+      }
+    }
+  }
+}
+
+@each $color, $value in $text-colors {
+  .typography-#{$color}-color {
+    color: unquote($value);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.text-small {
+  font-size: 0.75rem;
+}

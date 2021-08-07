@@ -1,0 +1,98 @@
+nav {
+  @media #{$medium-and-up} {
+    .sidenav-trigger {
+      float: left;
+      position: relative;
+      z-index: 1;
+      height: $navbar-height;
+      margin: 0 18px;
+
+      i {
+        height: $navbar-height;
+        line-height: $navbar-line-height;
+      }
+    }
+  }
+
+  .input-field {
+    height: auto;
+    line-height: 1;
+
+    i {
+      height: auto;
+      line-height: 1;
+    }
+
+    input:not(.browser-default) {
+      height: 2.5rem;
+    }
+
+    &.outlined {
+      .prefix {
+        top: 0.6rem;
+      }
+    }
+  }
+}
+
+.sidenav {
+  width: 240px;
+  transition: transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  &.bottom-aligned,
+  &.top-aligned {
+    padding-bottom: 0;
+    width: 100%;
+    height: auto;
+
+    &.active {
+      transform: translate(0, 0);
+    }
+  }
+
+  &.top-aligned {
+    transform: translate(0, -105%);
+    top: 0;
+    bottom: auto;
+  }
+
+  &.bottom-aligned {
+    transform: translate(0, 105%);
+    top: auto;
+    bottom: 0;
+  }
+
+  li {
+    > a {
+      color: unset;
+      display: unset;
+      font-weight: unset;
+      height: unset;
+      line-height: unset;
+      padding: unset;
+    }
+  }
+}
+
+nav i,
+nav [class^="mdi-"],
+nav [class*="mdi-"],
+nav i.material-icons {
+  height: auto;
+  line-height: 1;
+}
+nav .nav-wrapper {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+nav .classic-logo {
+	width: 200px;
+	margin: -5px auto 0;
+}
+nav .drawer-btn {
+	margin-right: -12px;
+}

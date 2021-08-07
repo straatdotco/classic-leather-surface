@@ -1,0 +1,51 @@
+.collapsible {
+  border-radius: $accordion-radius;
+  border: none;
+  overflow: hidden;
+}
+
+.collapsible-body {
+  max-height: 0px;
+  display: block;
+  padding: 0px 16px;
+
+  transition: all 0.3s ease;
+
+  &.active {
+    display: block;
+    max-height: unset;
+    padding: 0px 16px 16px;
+  }
+}
+
+.collapsible-header {
+  border-bottom: none;
+  background-color: transparent;
+}
+
+.collapsible-title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.collapsible-icon {
+  transform: rotate(90deg);
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+  &.active {
+    transform: rotate(270deg);
+    transform-origin: center center;
+  }
+  .material-icons {
+    margin: 0px;
+  }
+}
+
+.collapsible-actions {
+  display: none;
+
+  &.active {
+    display: flex;
+  }
+}

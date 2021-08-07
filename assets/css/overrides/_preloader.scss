@@ -1,0 +1,14 @@
+.spinner-layer {
+  &.secondary {
+    border-color: $secondary-color;
+  }
+
+  &.inherit-color {
+    border-color: inherit;
+  }
+
+  .circle-clipper .circle {
+    $circle-border-width: #{"max(2px, 0.06rem)"};
+    border-width: $circle-border-width;
+  }
+}

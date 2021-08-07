@@ -1,0 +1,31 @@
+.carousel {
+  .indicators {
+    .indicator-item {
+      height: 12px;
+      width: 12px;
+      box-shadow: -3px 6px 20px -2.5px rgba(0, 0, 0, 0.69);
+      background-color: white;
+      margin: 0.625rem 0.25rem;
+
+      &.active {
+        background-color: $text-primary-color;
+      }
+    }
+  }
+
+  &.carousel-slider {
+    .carousel-fixed-item {
+      top: 0;
+      bottom: auto;
+
+      &.with-indicators {
+        top: 0;
+        bottom: auto;
+      }
+    }
+  }
+
+	.carousel-description {
+		padding: 0 40px;
+	}
+}

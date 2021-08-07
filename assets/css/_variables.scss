@@ -1,0 +1,39 @@
+// @import "../node_modules/material-design-lite/src/color-definitions";
+@import '../node_modules/materialize-css/sass/components/color-variables';
+
+$primary-color: #000;
+$secondary-color: color('blue', 'darken-1');
+$error-color: #EB1E21;
+$success-color: #00B754;
+
+$text-primary-color: rgba(0, 0, 0, 0.87);
+$text-secondary-color: rgba(0, 0, 0, 0.54);
+$text-hint-color: #DEDEF2;
+
+$link-color: $primary-color;
+
+$small-screen: 600px;
+$small-screen-up: $small-screen + 1;
+$medium-screen: 960px;
+$medium-screen-up: $medium-screen + 1;
+$large-screen: 1280px;
+$large-screen-up: $large-screen + 1;
+
+$placeholder-text-color: #737373;
+$input-border-color: #737373;
+
+$button-radius: 4px;
+$button-raised-background: $primary-color;
+$button-large-height: 42px;
+$button-small-height: 30px;
+
+$spinner-default-color: $primary-color;
+
+$font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+$card-radius: 4px;
+
+$accordion-radius: 4px;
+
+$modal-close-background: rgba(0, 0, 0, 0.04);
+$modal-z-index: 1000;

@@ -1,0 +1,94 @@
+.container .row {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+
+  .col {
+    padding: 0;
+  }
+}
+
+$align-content: 'stretch', 'center', 'flex-start', 'flex-end', 'space-between', 'space-around';
+$align-items: 'center', 'flex-start', 'flex-end', 'stretch', 'baseline';
+$direction: 'row', 'row-reverse', 'column', 'column-reverse';
+$justify: 'flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly';
+$wrap: 'nowrap', 'wrap', 'wrap-reverse';
+
+.grid-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  @for $i from 1 to 9 {
+    &.spacing-#{$i} {
+      margin: (-1 * $i / 2) * 1rem;
+      width: calc(100% + #{$i / 2 * 1rem});
+
+      & > .grid-item {
+        padding: 0 (1 * $i / 2) * 1rem;
+      }
+    }
+  }
+
+  @each $align in $align-content {
+    &.align-content-#{$align} {
+      align-content: unquote($align);
+    }
+  }
+
+  @each $align in $align-items {
+    &.align-items-#{$align} {
+      align-items: unquote($align);
+    }
+  }
+
+  @each $dir in $direction {
+    &.direction-#{$dir} {
+      flex-direction: unquote($dir);
+    }
+  }
+
+  @each $just in $justify {
+    &.justify-#{$just} {
+      justify-content: unquote($just);
+    }
+  }
+
+  @each $w in $wrap {
+    &.wrap-#{$w} {
+      flex-wrap: unquote($w);
+    }
+  }
+}
+
+$sizes: 'xs' 0px, 'sm' $small-screen, 'md' $medium-screen, 'lg' $large-screen;
+
+.grid-item {
+  margin: 0;
+  box-sizing: border-box;
+
+  @each $label, $size in $sizes {
+    @media (min-width: $size) {
+      @for $i from 1 to 13 {
+        &.#{$label}-#{$i} {
+          flex-grow: 0;
+          max-width: #{$i / 12 * 100}#{"%"};
+          flex-basis: #{$i / 12 * 100}#{"%"};
+        }
+      }
+
+      &.#{$label}-true {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      &.#{$label}-auto {
+        flex-basis: auto;
+        flex-grow: 0;
+        max-width: none;
+      }
+    }
+  }
+}

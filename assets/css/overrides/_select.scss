@@ -1,0 +1,47 @@
+.input-field {
+  &.outlined {
+    .select-wrapper {
+      width: 100%;
+
+      .caret {
+        fill: $input-border-color;
+      }
+
+      & + label {
+        top: -25px;
+        background-color: white;
+        padding: 0 0.5rem;
+      }
+    }
+
+    &:focus-within {
+      .select-wrapper + label {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &.hide-first-option {
+    .select-dropdown {
+      li:first-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.select-dropdown {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+
+  li {
+    &.selected {
+      box-shadow: none;
+    }
+
+    & > span {
+      color: $text-primary-color;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+$outlined-input-spacing: 0.75rem;
+$outlined-border-color: rgba(0, 0, 0, 0.23);
+
+.input-field {
+  color: rgba(0, 0, 0, 0.87);
+
+  &.col {
+    label {
+      left: 0;
+    }
+
+    .prefix ~ label,
+    .prefix ~ .validate ~ label {
+      width: auto;
+    }
+  }
+
+  input {
+    color: inherit;
+  }
+
+  .prefix {
+    color: $input-border-color;
+    font-size: 1.5rem;
+    width: auto;
+    top: 1rem;
+
+    &.active {
+      color: $input-border-color;
+    }
+
+    & ~ input,
+    & ~ textarea,
+    & ~ label,
+    & ~ .validate ~ label,
+    & ~ .autocomplete-content {
+      margin-left: 2rem;
+    }
+  }
+
+  &.outlined {
+    padding-left: $outlined-input-spacing;
+    padding-right: $outlined-input-spacing;
+    box-shadow: 0 0 0 1px $outlined-border-color;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+
+    &.full-width {
+      width: 100%;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.7);
+    }
+
+    input {
+      border: 0;
+      margin-bottom: 0;
+      width: 100%;
+
+      &:not(.browser-default):focus {
+        border-bottom: 0;
+        box-shadow: none;
+      }
+    }
+
+    .start-adornment {
+      color: $input-border-color;
+      margin-right: 1rem;
+    }
+
+    .end-adornment {
+      color: $input-border-color;
+      margin-left: 1rem;
+    }
+
+    label {
+      margin-left: $outlined-input-spacing;
+
+      &.active {
+        background-color: white;
+        padding: 0 0.5rem;
+      }
+    }
+
+    &.no-border {
+      box-shadow: none;
+
+      &:focus-within {
+        box-shadow: none;
+      }
+    }
+
+    &:focus-within {
+      box-shadow: 0 0 0 2px $secondary-color;
+    }
+  }
+}

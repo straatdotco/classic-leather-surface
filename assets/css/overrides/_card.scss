@@ -1,0 +1,20 @@
+.card .card-action {
+  border-top: none;
+  border-bottom-right-radius: $card-radius;
+  border-bottom-left-radius: $card-radius;
+}
+
+.card,
+.card-panel {
+  border-radius: $card-radius;
+  border: none;
+}
+
+.card-separator {
+  border-top: 1px solid hsla(0, 0%, 62.7%, 0.2);
+  margin: 0px 24px;
+}
+
+.no-padding {
+  padding: 0px;
+}

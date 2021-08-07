@@ -1,0 +1,33 @@
+$radius: 4px;
+
+.popover {
+  display: flex;
+  position: relative;
+}
+
+.popover-opener {
+  cursor: pointer;
+}
+
+.popover-content {
+  max-width: 450px;
+  border-radius: $radius;
+  background: #fff;
+  padding: 16px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1004;
+  @extend .z-depth-1;
+  display: none;
+
+  transform: scale(0);
+  transform-origin: top left;
+  opacity: 0;
+}
+
+.popover-active .popover-content {
+  display: flex;
+  transform: scale(1);
+  opacity: 1;
+}

@@ -1,0 +1,21 @@
+#toast-container {
+  top: unset;
+  right: unset;
+  bottom: 0;
+  left: 0;
+  margin: 0.5rem;
+  min-width: calc(100% - 1rem);
+  
+  .toast {
+    border-radius: 4px;
+  }
+}
+
+@media (min-width: 600px){
+  #toast-container {
+    bottom: 1rem;
+    left: 1rem;
+    margin: unset;
+    min-width: unset;
+  }
+}

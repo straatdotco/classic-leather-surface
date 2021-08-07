@@ -1,0 +1,19 @@
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+$displays: "flex", "block", "none", "inline", "inline-block";
+
+@each $display in $displays {
+  .d-#{$display} {
+    display: unquote($display) !important;
+  }
+}
+
+$aligns: "right", "left", "right";
+
+@each $align in $aligns {
+  .text-#{$align} {
+    text-align: unquote($align) !important;
+  }
+}
