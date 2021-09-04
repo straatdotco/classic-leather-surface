@@ -30,6 +30,9 @@ defmodule Leather.Components.Accordion do
   @doc "The content of the action when not expanded"
   slot expand_action, required: false
 
+  @doc "Content of open/close icon (defaults to <Icon name=chevron_right/>)"
+  slot icon, required: false
+
   def render(assigns) do
     ~F"""
     <div id={@name} class="collapsible bg-white" :hook="Accordion">
@@ -37,7 +40,11 @@ defmodule Leather.Components.Accordion do
         <div class="collapsible-title">
           <#slot name="title" />
         </div>
-        <Icon class={"collapsible-icon toggable", active: @defaultOpen} name="chevron_right" />
+        {#if slot_assigned?(:icon)}
+          <#slot name="icon" />
+        {#else}
+          <Icon class={"collapsible-icon toggable", active: @defaultOpen} name="chevron_right" />
+        {/if}
       </div>
       <div class={"collapsible-body relative toggable", active: @defaultOpen} style={!@expanded && "height: 350px" || ""}>
         <#slot name="body"/>
